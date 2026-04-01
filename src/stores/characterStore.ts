@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import {fetchCharacters} from "../api/characters.ts";
+import type { Character } from "../api/characters.ts"
 
 export const useCharacterStore = defineStore('characterStore', {
     state: () => ({
