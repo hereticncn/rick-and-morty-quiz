@@ -19,7 +19,9 @@ export const useCharacterStore = defineStore('characterStore', {
     actions: {
         initAudio() {
             if (!this.audio) {
-                this.audio = new Audio('/audio/Ryan_Elder_-_Rick_and_Morty_Main_Title_Theme_Song.mp3');
+                const audioPath = `${import.meta.env.BASE_URL}audio/Ryan_Elder_-_Rick_and_Morty_Main_Title_Theme_Song.mp3`;
+
+                this.audio = new Audio(audioPath);
                 this.audio.loop = true;
                 this.audio.volume = 0.3;
             }
