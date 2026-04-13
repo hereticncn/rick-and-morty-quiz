@@ -56,11 +56,12 @@
   </div>
 </template>
 
-<style scoped>
+<style>
+  #app {
+    padding: 10px;
+  }
+
   .music-btn {
-    position: fixed;
-    bottom: 50px;
-    right: calc(50% - 25px);
     padding: 10px;
     background: #00ff00;
     border: none;
@@ -84,21 +85,6 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-  }
-
-  .fade-slide-enter-active,
-  .fade-slide-leave-active {
-    transition: all 0.4s ease-out;
-  }
-
-  .fade-slide-enter-from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-  }
-
-  .fade-slide-leave-to {
-    opacity: 0;
-    transform: translateY(-30px) scale(0.9);
   }
 
   .question-card {
@@ -137,71 +123,25 @@
     transition: all 0.2s;
   }
 
-  button:hover {
-    background: #00ff00;
-    color: #1a1a1a;
-    box-shadow: 0 0 15px #00ff00;
-    transform: scale(1.05);
+  @media (hover: hover) {
+    button:hover {
+      background: #00ff00;
+      color: #1a1a1a;
+      box-shadow: 0 0 15px #00ff00;
+      transform: scale(1.05);
+    }
   }
 
   button:active {
     transform: scale(0.95);
-  }
-
-  .content {
-    display: flex;
-    gap: 40px;
-  }
-
-  .character-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-  }
-
-  .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    background: #f9f9f9;
+    background: #00ff00;
+    color: #1a1a1a;
   }
 
   .card img {
     width: 100%;
     height: auto;
   }
-
-  .info {
-    padding: 10px;
-  }
-
-  .name {
-    font-weight: bold;
-    margin: 0;
-  }
-
-  .status {
-    font-size: 0.8rem;
-    margin: 5px 0 0;
-  }
-
-  .status.alive {
-    color: green;
-  }
-
-  .status.dead {
-    color: red;
-  }
-
-  .sidebar {
-    min-width: 200px;
-    border-left: 2px solid #eee;
-    padding-left: 20px;
-  }
-
 
   @media (min-width: 768px) {
     .music-btn {
