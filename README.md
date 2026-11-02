@@ -1,5 +1,61 @@
-# Vue 3 + TypeScript + Vite
+# Rick and Morty Quiz
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Небольшая SPA-викторина по вселенной Rick and Morty: на экране появляется портрет персонажа и четыре варианта имени. Угадывайте персонажей, набирайте очки и ставьте личные рекорды.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+**Демо:** https://hereticncn.github.io/rick-and-morty-quiz/
+
+## Возможности
+
+- Случайные персонажи и четыре варианта ответа.
+- Счёт за правильные ответы и рекорд, который сохраняется в `localStorage`.
+- Фоновая музыка с возможностью включить и выключить.
+- Экран поражения с правильным ответом и возможность начать заново.
+- Индикатор загрузки, обработка ошибок сети и кнопка повтора.
+- Адаптивная вёрстка, управление с клавиатуры и поддержка `prefers-reduced-motion`.
+- Автоматический деплой на GitHub Pages.
+
+## Стек
+
+- Vue 3 (`<script setup>`)
+- TypeScript (strict)
+- Vite
+- Pinia
+- axios
+- GitHub Actions
+
+## Запуск
+
+```bash
+npm install
+npm run dev
+```
+
+### Проверки и сборка
+
+```bash
+npm run typecheck
+npm run build
+npm run preview
+```
+
+## Структура проекта
+
+```text
+src/
+  api/characters.ts        загрузка персонажей с Rick and Morty API
+  stores/characterStore.ts игровая логика и состояние
+  App.vue                  интерфейс викторины
+  main.ts                  точка входа
+  style.css                глобальные стили
+public/
+  audio/                   музыкальное сопровождение
+```
+
+## Деплой
+
+Workflow `.github/workflows/deploy.yml` собирает проект и публикует `dist` на GitHub Pages при пуше в ветку `main`. Базовый путь задан в `vite.config.ts` и должен совпадать с именем репозитория.
+
+
+## Аудио
+
+Музыкальная тема используется в некоммерческих учебных целях. Права принадлежат правообладателям.
